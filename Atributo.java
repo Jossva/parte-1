@@ -30,8 +30,7 @@ public class Atributo {
 
 	public void setNombre(String nombre) {
 		this.nombre = nombre;
-		bytesNombre = new byte[30]; //arreglo de bytes de longitud 30
-		//convertir caracter por caracter a byte y agregarlo al arreglo
+		bytesNombre = new byte[30]; 
 		for (int i = 0; i < nombre.length(); i++) {
 			bytesNombre[i] = (byte)nombre.charAt(i);
 		}
@@ -89,11 +88,7 @@ public class Atributo {
 		}
 		if (this.valorTipoDato == TipoDato.CHAR.getValue()) {
 			this.nombreTipoDato = TipoDato.CHAR.name();
-			/*
-			 * la documentacion de Java indica que un tipo CHAR ocupa dos bytes
-			 * sin embargo RamdomAccessFile no tiene una escritura de tipo char
-			 * por lo que se usara tipo byte, es la razon del por que char sera de un byte 
-			 */
+			
 			this.bytes = 1;
 			tipoDato = TipoDato.CHAR;
 		}
